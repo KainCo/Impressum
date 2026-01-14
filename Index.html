@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impressum</title>
+    <style>
+        body { font-family: sans-serif; line-height: 1.6; max-width: 600px; margin: 40px auto; padding: 20px; color: #333; }
+        h1 { border-bottom: 2px solid #eee; padding-bottom: 10px; }
+        .contact-box { background: #f9f9f9; padding: 15px; border-radius: 5px; border: 1px solid #ddd; }
+        footer { margin-top: 40px; font-size: 0.8em; color: #777; }
+    </style>
+</head>
+<body>
+
+    <h1>Impressum</h1>
+
+    <div class="contact-box">
+        <p><strong>Verantwortlich für diesen Kanal:</strong><br>
+        Max Mustermann<br>
+        Musterstraße 1<br>
+        12345 Musterstadt</p>
+
+        <p><strong>Kontakt:</strong><br>
+        Telefon: +49 (0) 123 456789<br>
+        E-Mail: <span id="email-placeholder"><em>Wird geladen...</em></span></p>
+    </div>
+
+    <footer>
+        <p>Dieses Impressum gilt auch für den YouTube-Kanal [Dein Kanalname].</p>
+    </footer>
+
+    <script>
+        // JavaScript Snippet zur Maskierung
+        (function() {
+            var user = "dein-name";       // Teil vor dem @
+            var domain = "beispiel.de";   // Teil nach dem @
+            var element = document.getElementById('email-placeholder');
+            var email = user + "@" + domain;
+            element.innerHTML = '<a href="mailto:' + email + '">' + email + '</a>';
+        })();
+    </script>
+
+</body>
+</html>
