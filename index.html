@@ -4,42 +4,93 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Impressum</title>
+
+    <!-- Keine Indexierung -->
+    <meta name="robots" content="noindex, nofollow">
+
     <style>
-        body { font-family: sans-serif; line-height: 1.6; max-width: 600px; margin: 40px auto; padding: 20px; color: #333; }
-        h1 { border-bottom: 2px solid #eee; padding-bottom: 10px; }
-        .contact-box { background: #f9f9f9; padding: 15px; border-radius: 5px; border: 1px solid #ddd; }
-        footer { margin-top: 40px; font-size: 0.8em; color: #777; }
+        body {
+            font-family: sans-serif;
+            line-height: 1.6;
+            max-width: 600px;
+            margin: 40px auto;
+            padding: 20px;
+            color: #333;
+        }
+        h1 {
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+        }
+        .contact-box {
+            background: #f9f9f9;
+            padding: 15px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+        footer {
+            margin-top: 40px;
+            font-size: 0.8em;
+            color: #777;
+        }
+        .spacer {
+            display: inline-block;
+            width: 0.2em;
+        }
     </style>
 </head>
 <body>
 
-    <h1>Impressum</h1>
+<h1>Impressum</h1>
 
-    <div class="contact-box">
-        <p><strong>Verantwortlich für diesen Kanal:</strong><br>
-        Max Mustermann<br>
-        Musterstraße 1<br>
-        12345 Musterstadt</p>
+<div class="contact-box">
 
-        <p><strong>Kontakt:</strong><br>
-        Telefon: +49 (0) 123 456789<br>
-        E-Mail: <span id="email-placeholder"><em>Wird geladen...</em></span></p>
-    </div>
+    <p><strong>Verantwortlich für diesen Kanal:</strong><br>
+        Max<span class="spacer"></span>Mustermann
+    </p>
 
-    <footer>
-        <p>Dieses Impressum gilt auch für den YouTube-Kanal [Dein Kanalname].</p>
-    </footer>
+    <p>
+        Musterstraße&nbsp;<!-- -->
+        <span style="display:none;">bot</span>
+        1<br>
+        PLZ&nbsp;12345&nbsp;–&nbsp;Musterstadt
+    </p>
 
-    <script>
-        // JavaScript Snippet zur Maskierung
-        (function() {
-            var user = "dein-name";       // Teil vor dem @
-            var domain = "beispiel.de";   // Teil nach dem @
-            var element = document.getElementById('email-placeholder');
-            var email = user + "@" + domain;
-            element.innerHTML = '<a href="mailto:' + email + '">' + email + '</a>';
-        })();
-    </script>
+    <p>
+        <strong>Kontakt:</strong><br>
+
+        Telefon:
+        +49&nbsp;(0)&nbsp;
+        <span style="display:none;">spam</span>
+        123&nbsp;456789
+        <br>
+
+        E-Mail:
+        <span id="email-placeholder"><em>wird geladen…</em></span>
+    </p>
+
+</div>
+
+<footer>
+    <p>
+        Dieses Impressum gilt auch für den YouTube-Kanal
+        <strong>[Dein Kanalname]</strong>.
+    </p>
+</footer>
+
+<script>
+(function () {
+    // leicht gehärtete JS-Mail
+    var part1 = "dein";
+    var part2 = "-name";
+    var domain1 = "beispiel";
+    var domain2 = ".de";
+
+    var email = part1 + part2 + "@" + domain1 + domain2;
+    var el = document.getElementById("email-placeholder");
+
+    el.innerHTML = '<a href="mailto:' + email + '">' + email + '</a>';
+})();
+</script>
 
 </body>
 </html>
