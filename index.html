@@ -1,89 +1,144 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Impressum</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Impressum – KainCo Productions</title>
+<meta name="robots" content="noindex, nofollow">
 
-    <!-- Keine Indexierung -->
-    <meta name="robots" content="noindex, nofollow">
+<style>
+body {
+    font-family: Roboto, Arial, sans-serif;
+    line-height: 1.6;
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 24px;
+    background-color: #0f0f0f;
+    color: #f1f1f1;
+}
+h1 {
+    border-bottom: 3px solid #ff0000;
+    padding-bottom: 10px;
+    font-weight: 500;
+}
+.box {
+    background: #212121;
+    padding: 28px;
+    border-radius: 14px;
+    border: 1px solid #333;
+}
+a {
+    color: #3ea6ff;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+.section {
+    margin-top: 18px;
+}
+.small {
+    margin-top: 22px;
+    font-size: 0.9em;
+    color: #b5b5b5;
+}
+footer {
+    margin-top: 40px;
+    text-align: center;
+    font-size: 0.85em;
+    color: #777;
+}
+.spacer {
+    display: inline-block;
+    width: 0.2em;
+}
 
-    <style>
-        body {
-            font-family: sans-serif;
-            line-height: 1.6;
-            max-width: 600px;
-            margin: 40px auto;
-            padding: 20px;
-            color: #333;
-        }
-        h1 {
-            border-bottom: 2px solid #eee;
-            padding-bottom: 10px;
-        }
-        .contact-box {
-            background: #f9f9f9;
-            padding: 15px;
-            border-radius: 5px;
-            border: 1px solid #ddd;
-        }
-        footer {
-            margin-top: 40px;
-            font-size: 0.8em;
-            color: #777;
-        }
-        .spacer {
-            display: inline-block;
-            width: 0.2em;
-        }
-    </style>
+/* Dünnes Wort innerhalb von strong */
+strong .thin {
+    font-weight: 300; /* dünn / feine Schrift */
+}
+</style>
 </head>
+
 <body>
 
 <h1>Impressum</h1>
 
-<div class="contact-box">
+<div class="box">
 
-    <p><strong>Verantwortlich für diesen Kanal:</strong><br>
-        Furzza<span class="spacer"></span>Colocco
-    </p>
+<p><strong>Angaben gemäß § 5 TMG</strong></p>
 
-    <p>
-        Musterstraße&nbsp;<!-- -->
-        <span style="display:none;">bot</span>
-        1<br>
-        PLZ&nbsp;12345&nbsp;–&nbsp;Glasnapo
-    </p>
+<div class="section">
+<p>
+<strong><span id="name-placeholder"></span></strong><br>
+handelnd unter <strong>KainCo Productions</strong>
+</p>
+</div>
 
-    <p>
-        <strong>Kontakt:</strong><br>
+<div class="section">
+<p>
+<strong>Anschrift:</strong><br>
+<span id="address-placeholder"></span>
+</p>
+</div>
 
+<div class="section">
+<p>
+<strong>Kontakt:</strong><br>
+E-Mail: <span id="email-placeholder">[wird geladen]</span>
+</p>
+</div>
 
-        E-Mail:
-        <span id="email-placeholder"><em>wird geladen…</em></span>
-    </p>
+<div class="small">
+<p>
+<strong>Umsatzsteuer:</strong><br>
+Keine Umsatzsteuer-Identifikationsnummer gemäß § 19 UStG
+(Kleinunternehmerregelung)
+</p>
+</div>
+
+<div class="small">
+<p>
+Dieses Impressum gilt für alle unter dem Namen
+<strong>„KainCo Productions <span class="thin">oder</span> KainCo - Dedicated to Games“</strong> betriebenen
+Online-Präsenzen, insbesondere für:
+<br><br>
+YouTube, Instagram und TikTok.
+</p>
+</div>
 
 </div>
 
 <footer>
-    <p>
-        Dieses Impressum gilt auch für den YouTube-Kanal
-        <strong>[Dein Kanalname]</strong>.
-    </p>
+&copy; <span id="year-placeholder"></span> KainCo Productions
 </footer>
 
 <script>
 (function () {
-    // leicht gehärtete JS-Mail
-    var part1 = "dein";
-    var part2 = "-name";
-    var domain1 = "beispiel";
-    var domain2 = ".de";
+    /* ===== Name-Botschutz ===== */
+    var first = "Salvatore";
+    var last  = "Cocozza";
+    document.getElementById("name-placeholder").textContent = first + " " + last;
 
-    var email = part1 + part2 + "@" + domain1 + domain2;
-    var el = document.getElementById("email-placeholder");
+    /* ===== Anschrift-Botschutz ===== */
+    var street = "Kleiststraße";
+    var number = "37";
+    var zip    = "63303";
+    var city   = "Dreieich";
+    var country= "Deutschland";
+    document.getElementById("address-placeholder").textContent =
+        street + " " + number + ", " + zip + " " + city + ", " + country;
 
-    el.innerHTML = '<a href="mailto:' + email + '">' + email + '</a>';
+    /* ===== E-Mail-Botschutz ===== */
+    var user = "anfragen";
+    var tag  = "-kainco";
+    var domain = "proton.me";
+    var email = user + tag + "@" + domain;
+    document.getElementById("email-placeholder").innerHTML =
+        '<a href="mailto:' + email + '">' + email + '</a>';
+
+    /* ===== Jahr ===== */
+    document.getElementById("year-placeholder").textContent = new Date().getFullYear();
 })();
 </script>
 
